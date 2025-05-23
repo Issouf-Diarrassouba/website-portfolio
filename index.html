@@ -1,55 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Issouf Diarrassouba</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issouf Diarrassouba Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #fff;
       color: #333;
-      padding: 2rem;
-      max-width: 800px;
+    }
+    .navbar {
+      position: fixed;
+      width: 100%;
+      padding: 1rem 2rem;
+      background-color: rgba(28, 28, 43, 0.85);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 100px 20px 60px;
+      max-width: 1200px;
       margin: auto;
     }
-    h1 {
-      color: #1a73e8;
+    .swiper {
+      padding: 2rem 0;
     }
-    a {
+    .swiper-slide {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .swiper-slide:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .swiper-slide h3 {
       color: #1a73e8;
+      margin-bottom: 0.5rem;
+    }
+    .swiper-slide p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .github-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #1a73e8;
+      color: white;
       text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      transition: background 0.2s ease;
     }
-    a:hover {
-      text-decoration: underline;
+    .github-btn:hover {
+      background: #155ab6;
     }
-    .section {
-      margin-bottom: 2rem;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #000;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-left">Issouf Diarrassouba</div>
+    <div class="navbar-right">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <h1>Issouf Diarrassouba Yessir hi mon coeur </h1>
-  <p>Computer Science graduate from The George Washington University passionate about backend development, mobile apps, and data-driven systems.</p>
+  <section id="projects">
+    <h2 style="text-align:center;">Featured Projects</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/images/Issouf.jpeg" alt="HouseMatch">
+          <h3>HouseMatch</h3>
+          <p>Real-time real estate finder using Kotlin and Firebase.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/HouseMatch" target="_blank">GitHub</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/Issouf.jpeg" alt="RentalMatch">
+          <h3>RentalMatch</h3>
+          <p>Location-based news feed using geolocation APIs.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/RentalMatch-" target="_blank">GitHub</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/Issouf.jpeg" alt="KaabaView">
+          <h3>KaabaView</h3>
+          <p>3D WebGL viewer with matrix transforms and audio sync.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/KaabaView" target="_blank">GitHub</a>
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/Issouf.jpeg" alt="UniFlow">
+          <h3>UniFlow</h3>
+          <p>Integrated student management system built in Flask.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/UniFlow" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>SecureAuth</strong>: Built a Google OAuth authentication system with token-based security.</li>
-      <li><strong>RentalMatch</strong>: Android app with real-time property listings using Firebase and Google Maps API.</li>
-      <li><strong>UniFlow</strong>: Student management system using Flask and MySQL.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Links</h2>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/issouf-diarrassouba/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/Issouf-Diarrassouba" target="_blank">GitHub</a></li>
-      <li><a href="Issouf_Diarrassouba_Resume_.pdf" target="_blank">Download My Resume</a></li>
-    </ul>
-  </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }
+    });
+  </script>
 </body>
 </html>
