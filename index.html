@@ -2,154 +2,315 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Issouf Diarrassouba Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-    .navbar {
-      position: fixed;
-      width: 100%;
-      padding: 1rem 2rem;
-      background-color: rgba(28, 28, 43, 0.85);
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      z-index: 1000;
-    }
-    .navbar a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 100px 20px 60px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .swiper {
-      padding: 2rem 0;
-    }
-    .swiper-slide {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      transition: transform 0.3s ease;
-    }
-    .swiper-slide:hover {
-      transform: scale(1.05);
-      z-index: 2;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    .swiper-slide h3 {
-      color: #1a73e8;
-      margin-bottom: 0.5rem;
-    }
-    .swiper-slide p {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-    .github-btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #1a73e8;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      transition: background 0.2s ease;
-    }
-    .github-btn:hover {
-      background: #155ab6;
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: #000;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-left">Issouf Diarrassouba</div>
-    <div class="navbar-right">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
 
-  <section id="projects">
-    <h2 style="text-align:center;">Featured Projects</h2>
-    <div class="swiper">
-      <div class="swiper-wrapper">
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-left">
+    <span class="logo">Issouf Diarrassouba</span>
+  </div>
+  <div class="navbar-right">
+    <a href="#" id="nav-home">Home</a>
+    <a href="#" id="nav-projects">Projects</a>
+    <a href="#" id="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Swiper Container -->
+<div class="swiper main-swiper">
+  <div class="swiper-wrapper">
+
+     <!-- Home --> 
+    <div class="swiper-slide animated-bg" id="slide-home">
+      <div id="particles-js"></div>
+      <section id="home" class="hero">
+        <div class="hero-container">
+          <img src="/images/Issouf.jpeg" alt="Issouf_Diarrassouba">
+          <div class="hero-text">
+            <h1>Issouf Diarrassouba</h1>
+            <p class="subtitle">A Bit About Me</p>
+            <p>
+               I'm a Computer Science graduate from The George Washington University who thrives at the intersection of backend development, cloud systems, and meaningful impact. 
+               I'm eager to join a mission-driven team where I can grow, learn from others, and help build technology that solves real-world problems—especially in civic tech, education, or socially driven AI.
+               I value mentorship, inclusive collaboration, and designing scalable systems with clean, purposeful code.
+              </p>
+            <div class="hero-buttons">
+              <a href="/docs/Issouf_Diarrassouba_Resume_.pdf" class="circle-button yellow" target="_blank">View Resume</a>
+              <a href="#" id="btn-projects" class="circle-button blue">My Projects</a>
+              <a href="#" id="btn-contact" class="circle-button gray">Get in Touch</a>             
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- My Projects -->
+    <div class="swiper-slide animated-bg" id="slide-projects">
+      <div id="particles-js-projects"></div>
+      <section id="projects">
+      <h2 style="text-align:center; font-size: 40px; margin-bottom: 2rem;">Highlighted Software Projects</h2>
+        <div class="swiper project-carousel">
+          <div class="swiper-wrapper">
+
         <div class="swiper-slide">
-          <img src="/images/Issouf.jpeg" alt="HouseMatch">
+        <div class="project-card">
+          <img src="/images/housematch.png" alt="HouseMatch"/>
           <h3>HouseMatch</h3>
-          <p>Real-time real estate finder using Kotlin and Firebase.</p>
+          <p>Real-time mobile app that helps users find rental properties using Kotlin, Firebase, and Google Maps API.</p>
           <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/HouseMatch" target="_blank">GitHub</a>
         </div>
-        <div class="swiper-slide">
-          <img src="/images/Issouf.jpeg" alt="RentalMatch">
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/rental.png" alt="RentalMatch" />
           <h3>RentalMatch</h3>
-          <p>Location-based news feed using geolocation APIs.</p>
+          <p>Delivers hyper-local property recommendations using geolocation and dynamic filtering based on user preferences.</p>
           <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/RentalMatch-" target="_blank">GitHub</a>
         </div>
-        <div class="swiper-slide">
-          <img src="/images/Issouf.jpeg" alt="KaabaView">
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/kaaba.png" alt="KaabaView" />
           <h3>KaabaView</h3>
-          <p>3D WebGL viewer with matrix transforms and audio sync.</p>
-          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/KaabaView" target="_blank">GitHub</a>
-        </div>
-        <div class="swiper-slide">
-          <img src="/images/Issouf.jpeg" alt="UniFlow">
-          <h3>UniFlow</h3>
-          <p>Integrated student management system built in Flask.</p>
-          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/UniFlow" target="_blank">GitHub</a>
+          <p>Interactive 3D WebGL model of the Kaaba, featuring matrix transformations and synchronized audio narration.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/Kaaba-3D-Model" target="_blank">GitHub</a>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/uniservice.png" alt="UniFlow" />
+          <h3>UniFlow</h3>
+          <p>Comprehensive student management system built with Flask and MySQL, including advising, scheduling, and registration.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/College-University-System" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/gwack_chat.png" alt="GWack-Client-ChatApp" />
+          <h3>GWack-Client-ChatApp</h3>
+          <p>A Java Swing-based chat client with custom themes, message formatting, and user personalization features.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/GWack-Client-ChatApp" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/cat_and_mouse.png" alt="OOP-Creature-Simulation" />
+          <h3>OOP-Creature-Simulation</h3>
+          <p>Object-oriented simulation of a digital ecosystem featuring cats, mice, and zombies with unique behavioral logic.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/OOP-Creature-Simulation" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/yelpapp.png" alt="yelpApplication" />
+          <h3>Yelp App</h3>
+          <p>An Android application that mirrors Yelp functionality, allowing users to search, rate, and review local businesses.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/Yelp-Application" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/linear_regression.png" alt="linear_regression" />
+          <h3>Linear Regression Housing Model</h3>
+          <p>Machine learning model that predicts housing prices using linear regression on location and feature-based datasets.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/Housing-Linear-Regression-Recommendation-ML-Model" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/dice_game.png" alt="dice_game" />
+          <h3>Dice Game</h3>
+          <p>Simple Android-based dice game built in Kotlin, with UI animations and randomized outcomes on each roll.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/Android-Dice-Game-" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="project-card">
+          <img src="/images/mutex.png" alt="mutex_xv6" />
+          <h3>Mutex</h3>
+          <p>Custom mutex implementation in the XV6 operating system to manage thread synchronization and avoid race conditions.</p>
+          <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/xv6-OS" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+    <div class="swiper-slide">
+      <div class="project-card">
+        <img src="/images/5pillarsofislam.png" alt="five_pillar_exhibit" />
+        <h3>Five Pillars of Islam Exhibit</h3>
+        <p>A virtual exhibit designed to educate viewers on the Five Pillars of Islam through interactive visuals and accessible descriptions.</p>
+        <a class="github-btn" href="https://github.com/Issouf-Diarrassouba/Virtual-Five-Pillar-Exam-Exhibi" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+
+          </div>
+          <div class="swiper-button-prev project-prev"></div>
+          <div class="swiper-button-next project-next"></div>
+        </div>
+      </section>
+    </div>
+
+   
+   <!-- My Contact Information -->
+<div class="swiper-slide animated-bg" id="slide-contact" style="display: flex; align-items: center; justify-content: center; position: relative;">
+  <div id="particles-js-contact" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+  <section id="contact" style="text-align: center; z-index: 1; padding: 40px 20px; max-width: 700px;">
+  <img src="/images/issouf3.jpeg" alt="Issouf Diarrassouba" class="profile-pic" />
+
+
+    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Let's Connect</h2>
+    <p style="color: #ccc; font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem;">
+Whether you're hiring, collaborating, or just reaching out, I'm always open to new conversations and opportunities. Let's connect.    </p>
+  <div class="contact-buttons">
+  <a href="https://www.linkedin.com/in/issouf-diarrassouba/" target="_blank" class="contact-btn">🔗 LinkedIn</a>
+  <a href="https://github.com/Issouf-Diarrassouba" target="_blank" class="contact-btn">💻 GitHub</a>
+  <a href="/docs/Issouf_Diarrassouba_Resume_.pdf" target="_blank" class="contact-btn">📄 Resume</a>
+  <a href="mailto:idiarrassoub97@gwmail.gwu.edu" class="contact-btn">📬 Email</a>
+  <a href="https://twitter.com/yourhandle" target="_blank" class="contact-btn">🐦 Twitter</a>
+</div>
+
+
+  </section>
+</div>
+
+
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const mainSwiper = new Swiper('.main-swiper', {
+    direction: 'vertical',
+    loop: false,
+    speed: 600,
+    keyboard: { enabled: true },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    mousewheel: true,
+  });
+
+  const projectSwiper = new Swiper('.project-carousel', {
+  direction: 'horizontal',
+  loop: true, 
+  spaceBetween: 20,
+  slidesPerView: 1, 
+  centeredSlides: false,
+  loopAdditionalSlides: 3, 
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  navigation: {
+    nextEl: '.project-next',
+    prevEl: '.project-prev'
+  },
+  breakpoints: {
+    640: { slidesPerView: 1.5 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 2.5 },
+    1440: { slidesPerView: 3 }
+  }
+});
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('nav-home')?.addEventListener('click', e => {
+      e.preventDefault();
+      mainSwiper.slideTo(0);
     });
+
+    document.getElementById('nav-projects')?.addEventListener('click', e => {
+      e.preventDefault();
+      mainSwiper.slideTo(1);
+    });
+
+    document.getElementById('nav-contact')?.addEventListener('click', e => {
+      e.preventDefault();
+      mainSwiper.slideTo(2);
+    });
+
+    document.getElementById('btn-projects')?.addEventListener('click', e => {
+      e.preventDefault();
+      mainSwiper.slideTo(1);
+    });
+
+    document.getElementById('btn-contact')?.addEventListener('click', e => {
+      e.preventDefault();
+      mainSwiper.slideTo(2);
+    });
+
+   
+  });
+
+  // Background Particles
+
+   // Home 
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 6, random: true },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 1, direction: "none" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } }
+      },
+      retina_detect: true
+    });
+
+  // My Projects 
+    particlesJS("particles-js-projects", {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 6, random: true },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 1, direction: "none" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } }
+      },
+      retina_detect: true
+    });
+
+    // My Contact Information
+  particlesJS("particles-js-contact", {
+    particles: {
+      number: { value: 60, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: true },
+      size: { value: 6, random: true },
+      line_linked: { enable: false },
+      move: { enable: true, speed: 1, direction: "none" }
+    },
+    interactivity: {
+      events: { onhover: { enable: true, mode: "repulse" } }
+    },
+    retina_detect: true
+  });
+
   </script>
-</body>
+  </body>
 </html>
