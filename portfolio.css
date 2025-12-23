@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET / BASE
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -11,32 +14,57 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  height: 80px;
+  padding: 0 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   background-color: rgba(28, 28, 43, 0.8);
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-left {
-  flex: 1;
-  min-width: 200px;
-  color: #ffffff;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left img {
+  position: absolute;
+  top: -20px;
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+@keyframes logoBounceSpin {
+  0%   { transform: translate(0,0) rotate(0deg); }
+  25%  { transform: translate(var(--x1,0px), var(--y1,0px)) rotate(90deg); }
+  50%  { transform: translate(var(--x2,0px), var(--y2,0px)) rotate(180deg); }
+  75%  { transform: translate(var(--x3,0px), var(--y3,0px)) rotate(270deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+.navbar-left img.hover-animate {
+  animation: logoBounceSpin 2s ease-in-out forwards;
 }
 
 .navbar-right {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 16px;
   justify-content: flex-end;
 }
 
@@ -45,18 +73,21 @@ html, body {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: background 0.2s ease;
 }
 
 .navbar-right a:hover,
 .navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(237, 230, 230, 0.1);
 }
 
+/* =========================
+   HERO
+========================= */
 .hero {
-  padding-top: 200px;
+  padding-top: 0;
   text-align: center;
 }
 
@@ -67,7 +98,6 @@ html, body {
   flex-wrap: wrap;
   gap: 2rem;
 }
-
 
 .hero img {
   width: 320px;
@@ -82,7 +112,6 @@ html, body {
   text-align: left;
   z-index: 10;
   position: relative;
-  
 }
 
 .hero-text h1 {
@@ -136,7 +165,9 @@ html, body {
 .green  { background-color: #26de81; }
 .gray   { background-color: #b2bec3; }
 
-/* PARTICLES BACKGROUND */
+/* =========================
+   PARTICLES BACKGROUND
+========================= */
 #particles-js,
 #particles-js-projects {
   position: absolute;
@@ -152,7 +183,6 @@ html, body {
   color: #fff;
   background-size: auto;
   animation: gradientMove 12s ease infinite;
-  
 }
 
 @keyframes gradientMove {
@@ -161,7 +191,9 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* MAIN SWIPER */
+/* =========================
+   MAIN SWIPER (VERTICAL)
+========================= */
 .main-swiper {
   width: 100%;
   height: 100vh;
@@ -179,20 +211,22 @@ html, body {
   position: relative;
 }
 
-/* PROJECT CAROUSEL */
+/* =========================
+   PROJECT CAROUSEL (HORIZONTAL)
+========================= */
 .project-carousel {
   width: 100%;
-  padding: 2rem 1rem;
-  overflow: visible;
-  position: relative;
-  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
 .project-carousel .swiper-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0;
+  justify-content: flex-start;
 }
 
 .project-carousel .swiper-slide {
@@ -203,17 +237,18 @@ html, body {
 
 .project-card {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-  width: 330px;
-  height: 500px;
+  width: 100%;
+  max-width: 350px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 .project-card:hover {
@@ -244,7 +279,9 @@ html, body {
   overflow-wrap: break-word;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 ul.links {
   list-style: none;
   padding: 0;
@@ -259,7 +296,9 @@ ul.links a {
   text-decoration: none;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .github-btn {
   padding: 0.5rem 1rem;
   background: #1a73e8;
@@ -276,13 +315,17 @@ ul.links a {
   background: #0c5ac0;
 }
 
-/* NAV BUTTONS */
+/* =========================
+   SWIPER NAV ARROWS (PROJECT)
+========================= */
 .swiper-button-prev.project-prev,
 .swiper-button-next.project-next {
   color: #333;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 section {
   padding: 100px 20px 60px;
   max-width: 1200px;
@@ -308,6 +351,7 @@ section {
 #contact a:hover {
   text-decoration: underline;
 }
+
 #contact h2 {
   font-size: 2.5rem;
   color: #ffffff;
@@ -331,20 +375,19 @@ section {
 
 .contact-buttons {
   display: flex;
-  flex-wrap: wrap;       
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
   padding: 1rem;
 }
 
-
 .contact-btn {
   background-color: transparent;
   color: white;
   padding: 1rem 2rem;
   border: 2px solid #f1f3f5;
-  border-radius: 16px; 
+  border-radius: 16px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
@@ -358,7 +401,6 @@ section {
   background-color: #1a73e8;
   color: white;
   transform: scale(1.05);
-
 }
 
 .profile-pic {
@@ -369,5 +411,285 @@ section {
   margin-bottom: 1rem;
   border: 3px solid #1a73e8;
   box-shadow: 0 0 12px rgba(26, 115, 232, 0.6);
+}
 
+/* =========================
+   DEFAULT BULLETS (GENERIC)
+========================= */
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  margin: 10px 0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background: #15238e;
+  transform: scale(2.5);
+}
+
+/* =========================
+   MAIN VERTICAL SWIPER BULLETS (PILL + SWIPE UP)
+========================= */
+.main-swiper > .swiper-pagination {
+  right: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  padding: 10px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.main-swiper > .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  margin: 10px 0 !important;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.25);
+}
+
+.main-swiper > .swiper-pagination .swiper-pagination-bullet-active {
+  background: #45aaf2;
+  transform: scale(1.6);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.65), 0 6px 14px rgba(0,0,0,0.35);
+}
+
+.main-swiper > .swiper-pagination::before {
+  display: block;
+  color: rgba(255,255,255,0.9);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.main-swiper > .swiper-pagination::after {
+  content: "⇅";
+  display: block;
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* =========================
+   PHONE DEVICE SECTION
+========================= */
+@media screen and (max-width: 768px) {
+
+  :root { --nav-h: 60px; }
+
+  /* ===== Main Swiper / slides (phone) ===== */
+  .main-swiper {
+    width: 100%;
+    height: 100dvh;
+  }
+
+  .main-swiper .swiper-slide {
+    height: 100dvh;
+    padding-top: var(--nav-h);
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+
+  /* ===== Navbar (phone) ===== */
+  .navbar {
+    height: var(--nav-h);
+    padding: 0 15px;
+  }
+
+  .navbar-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-left img {
+    height: 102px !important;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    top: 18px !important;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+
+  .navbar-right a {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+
+  /* ===== Global section padding (phone) ===== */
+  section {
+    padding: 14px 14px 18px !important;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* ===== Hero (phone) ===== */
+  .hero {
+    padding-top: 0 !important;
+    text-align: center;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero img {
+    width: 130px !important;
+    height: 130px !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text {
+    max-width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    margin: 6px 0;
+  }
+
+  .hero-text p {
+    font-size: 0.82rem;
+    line-height: 1.3;
+    margin: 8px auto 0;
+    max-width: 520px;
+  }
+
+  .hero-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .circle-button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  /* ===== PROJECTS (phone) ===== */
+  #slide-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 18px;
+  }
+
+  #projects {
+    padding-top: 8px !important;
+    padding-bottom: 12px !important;
+    width: 100%;
+  }
+
+  #projects h2 {
+    font-size: 35px !important;
+    margin: 22px 0 6px !important;
+    text-align: center;
+  }
+
+  .project-carousel {
+    width: 100%;
+    margin-top: 50px;
+    max-width: 100%;
+    padding: 0 1.1rem 0.25rem !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-carousel .swiper-wrapper {
+    display: flex;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .project-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 260px;
+    height: 410px;
+    margin: 0 auto;
+    padding: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .project-card img {
+    height: 135px !important;
+    margin-bottom: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem !important;
+    margin: 0.35rem 0;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ===== Pagination bullets (phone) ===== */
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 8px 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform: scale(1.8);
+  }
+
+  /* ===== Project arrows (phone) ===== */
+  .swiper-button-prev.project-prev,
+  .swiper-button-next.project-next {
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 18px;
+    font-weight: 700;
+  }
 }

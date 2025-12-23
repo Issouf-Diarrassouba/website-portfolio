@@ -14,7 +14,7 @@
 <!-- Navbar -->
 <nav class="navbar">
   <div class="navbar-left">
-    <span class="logo">Issouf Diarrassouba</span>
+     <span class="logo"><img src="images/Issouf_Logo.png" alt="Issouf Diarrassouba Personal Logo"></span>
   </div>
   <div class="navbar-right">
     <a href="#" id="nav-home">Home</a>
@@ -34,15 +34,15 @@
         <div class="hero-container">
           <img src="images/issoufone.jpeg" alt="Issouf_Diarrassouba">
           <div class="hero-text">
-            <h1>Issouf Diarrassouba</h1>
+          <h1 style="text-align: center;">Issouf Diarrassouba</h1>
             <p class="subtitle">A Bit About Me</p>
-            <p>
-               I'm a Computer Science graduate from The George Washington University who thrives at the intersection of backend development, cloud systems, and meaningful impact. 
-               I'm eager to join a mission-driven team where I can grow, learn from others, and help build technology that solves real-world problems—especially in civic tech, education, or socially driven AI.
-               I value mentorship, inclusive collaboration, and designing scalable systems with clean, purposeful code.
+            <p style="text-align: center;">
+               I'm a Computer Science graduate from The George Washington University who enjoys working at the intersection of backend systems, cloud infrastructure, data, and meaningful impact.
+               I'm drawn to mission-driven teams that value collaboration, mentorship, and thoughtful engineering. My goal is to help build scalable, well-designed systems that address real-world challenges, support  
+               company growth, and advance mission-aligned goals, while responsibly embracing emerging AI technologies, to drive future development, foster growth, and create meaningful contributions. 
               </p>
             <div class="hero-buttons">
-              <a href="docs/Issouf_Diarrassouba_Technical__Resume_OH.docx.pdf" class="circle-button yellow" target="_blank">View Resume</a>
+              <a href="docs/Issouf_Diarrassouba_Resume_Tech.pdf" class="circle-button yellow" target="_blank">View Resume</a>
               <a href="#" id="btn-projects" class="circle-button blue">My Projects</a>
               <a href="#" id="btn-contact" class="circle-button gray">Get in Touch</a>             
             </div>
@@ -180,7 +180,7 @@ Whether you're hiring, collaborating, or just reaching out, I'm always open to n
   <div class="contact-buttons">
   <a href="https://www.linkedin.com/in/issouf-diarrassouba/" target="_blank" class="contact-btn">🔗 LinkedIn</a>
   <a href="https://github.com/Issouf-Diarrassouba" target="_blank" class="contact-btn">💻 GitHub</a>
-  <a href="docs/Issouf_Diarrassouba_Technical__Resume_OH.docx.pdf" target="_blank" class="contact-btn">📄 Resume</a>
+  <a href="docs/Issouf_Diarrassouba_Resume_Tech.pdf" target="_blank" class="contact-btn">📄 Resume</a>
   <a href="mailto:idiarrassoub97@gwmail.gwu.edu" class="contact-btn">📬 Email</a>
   <a href="https://x.com/IssoufD20" target="_blank" class="contact-btn">🐦 Twitter</a>
 </div>
@@ -198,33 +198,77 @@ Whether you're hiring, collaborating, or just reaching out, I'm always open to n
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+
+const logo = document.querySelector('.navbar-left img');
+
+function randomOffset(max) {
+  return (Math.random() * max * 2 - max).toFixed(2) + 'px';
+}
+
+function animateLogo() {
+  // Set random offsets
+  logo.style.setProperty('--x1', randomOffset(50));
+  logo.style.setProperty('--y1', randomOffset(50));
+  logo.style.setProperty('--x2', randomOffset(70));
+  logo.style.setProperty('--y2', randomOffset(70));
+  logo.style.setProperty('--x3', randomOffset(50));
+  logo.style.setProperty('--y3', randomOffset(50));
+
+  // Trigger animation
+  logo.classList.remove('hover-animate');
+  void logo.offsetWidth; // force reflow
+  logo.classList.add('hover-animate');
+}
+
+// Trigger on hover or click
+logo.addEventListener('mouseenter', animateLogo);
+logo.addEventListener('click', animateLogo);
+
+
+
+
   const mainSwiper = new Swiper('.main-swiper', {
     direction: 'vertical',
     loop: false,
     speed: 600,
     keyboard: { enabled: true },
-    pagination: { el: '.swiper-pagination', clickable: true },
+    pagination: {
+      el: '.swiper-pagination', 
+      clickable: true
+     },
     mousewheel: true,
   });
 
   const projectSwiper = new Swiper('.project-carousel', {
   direction: 'horizontal',
-  loop: true, 
-  spaceBetween: 20,
-  slidesPerView: 1, 
-  centeredSlides: false,
-  loopAdditionalSlides: 3, 
-  watchSlidesProgress: true,
-  watchSlidesVisibility: true,
+  loop: true,
+
   navigation: {
     nextEl: '.project-next',
-    prevEl: '.project-prev'
+    prevEl: '.project-prev',
   },
+
   breakpoints: {
-    640: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 2.5 },
-    1440: { slidesPerView: 3 }
+    // Mobile
+    0: {
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 16,
+    },
+
+    // Tablet
+    768: {
+      slidesPerView: 2,
+      centeredSlides: false,
+      spaceBetween: 20,
+    },
+
+    // Desktop
+    1024: {
+      slidesPerView: 3,
+      centeredSlides: false,
+      spaceBetween: 30,
+    },
   }
 });
 
@@ -312,5 +356,6 @@ Whether you're hiring, collaborating, or just reaching out, I'm always open to n
   });
 
   </script>
+ 
   </body>
 </html>
