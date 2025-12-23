@@ -482,7 +482,7 @@ section {
 /* =========================
    PHONE DEVICE SECTION
 ========================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 
   :root { --nav-h: 60px; }
 
