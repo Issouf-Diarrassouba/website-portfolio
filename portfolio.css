@@ -619,7 +619,7 @@ section {
   .project-carousel {
     width: 100%;
     margin-top: 0 !important;        /* stop fighting margin */
-    transform: translateY(-170px);
+    transform: translateY(-200px);
     max-width: 100%;
     padding: 0 1.1rem 0.25rem !important;
     overflow: hidden;
