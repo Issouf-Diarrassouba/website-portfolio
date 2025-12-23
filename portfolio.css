@@ -334,6 +334,27 @@ html, body {
   transform: scale(1.5);
 }
 
+.hero-links{
+  margin-top: 12px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.hero-link{
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 2px;
+}
+
+.hero-link:hover{
+  color: #ffffff;
+  border-bottom-color: rgba(255,255,255,0.6);
+}
+
 /* =========================
    MOBILE (<=900px)
 ========================= */
