@@ -8,7 +8,7 @@ The site is designed to be clean, responsive, and network-friendly, with an emph
 
 
 Live Site:
-https://issouf-diarrassouba.github.io
+[https://issouf-diarrassouba.github.io](https://issouf-diarrassouba.github.io/website-portfolio/)
 
   Features
 
