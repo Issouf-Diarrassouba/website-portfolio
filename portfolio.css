@@ -610,7 +610,7 @@ section {
 
   #projects h2 {
     font-size: 35px !important;
-    margin-top: 48px;
+    margin-top: 148px;
     margin-bottom: 16px; 
     line-height: 1.15;
     text-align: center;
@@ -618,7 +618,7 @@ section {
 
   .project-carousel {
     width: 100%;
-    margin-top: 50px;
+    margin-top: -200px;
     max-width: 100%;
     padding: 0 1.1rem 0.25rem !important;
     overflow: hidden;
