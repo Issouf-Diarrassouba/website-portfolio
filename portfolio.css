@@ -610,7 +610,9 @@ section {
 
   #projects h2 {
     font-size: 35px !important;
-    margin: 22px 0 6px !important;
+    margin-top: 48px;
+    margin-bottom: 16px; 
+    line-height: 1.15;
     text-align: center;
   }
 
